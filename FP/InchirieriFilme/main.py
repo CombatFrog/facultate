@@ -1,4 +1,4 @@
-from Teste.teste import Teste
+from Teste.teste import Teste, TesteUnittest
 from Infrastructura.repos import RepoClienti, RepoFilme, RepoInchirieri
 from Infrastructura.fileRepos import RepoFilmeFromFile, RepoClientiFromFile, RepoInchirieriFromFile
 from Validare.validatoare import ValidFilme, ValidClienti, ValidInchirieri
@@ -16,10 +16,10 @@ srvFilme = ServiceFilme(repoFilme, validFilme)
 srvClienti = ServiceClienti(repoClienti, validClienti)
 srvInchirieri = ServiceInchirieri(repoInchirieri, validInchirieri, repoClienti, repoFilme)
 ui = Consola(srvClienti, srvFilme, srvInchirieri)
-teste = Teste()
+teste = TesteUnittest()
 
 def main():
-    teste.run_all_tests()
+    teste.runAllTests()
     ui.run()
 
 
