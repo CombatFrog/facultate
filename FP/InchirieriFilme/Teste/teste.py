@@ -160,8 +160,9 @@ class TesteUnittest(unittest.TestCase):
         self.__validClient = validClient
 
     def testRepoClient(self):
+        cli = Client(1, "Ion", 5001229172347, 0)
         self.__repoClient = RepoClienti()
-        self.__repoClient.adauga_client(self.__client)
+        self.__repoClient.adauga_client(cli)
         client = Client(1, "Vasile", 1234567890123, 0)
         client1 = Client(2, "Sorin", 1231231231231, 0)
         client3 = Client(1, None, None, 0)
@@ -170,17 +171,17 @@ class TesteUnittest(unittest.TestCase):
             self.__repoClient.adauga_client(client)
         self.assertEqual(len(self.__repoClient.get_all()), 1)
         self.__repoClient.modifica_client(client)
-        self.assertEqual(self.__client.get_nume(), "Vasile")
-        self.assertEqual(self.__client.get_cnp(), 1234567890123)
+        self.assertEqual(cli.get_nume(), "Vasile")
+        self.assertEqual(cli.get_cnp(), 1234567890123)
         with self.assertRaises(RepoError):
             self.__repoClient.modifica_client(client1)
         x = self.__repoClient.cauta_client(client3)
-        self.assertEqual(x, self.__client)
+        self.assertEqual(x, cli)
         x = self.__repoClient.cauta_client(client4)
-        self.assertEqual(x, self.__client)
+        self.assertEqual(x, cli)
         with self.assertRaises(RepoError):
             self.__repoClient.cauta_client(client1)
-        self.__repoClient.sterge_client(self.__client)
+        self.__repoClient.sterge_client(cli)
         with self.assertRaises(RepoError):
             self.__repoClient.sterge_client(client1)
         self.assertEqual(len(self.__repoClient.get_all()), 0)
@@ -213,8 +214,9 @@ class TesteUnittest(unittest.TestCase):
         self.__validFilme = validFilme
 
     def testRepoFilme(self):
+        film = Film(1, 'Titlu', 'Descriere', 'Gen', 0)
         self.__repoFilme = RepoFilme()
-        self.__repoFilme.adauga_film(self.__film)
+        self.__repoFilme.adauga_film(film)
         film1 = Film(1, 'b', 'b', 'b', 0)
         film2 = Film(1, None, None, None, 0)
         film3 = Film(2, None, None, None, 0)
@@ -222,13 +224,13 @@ class TesteUnittest(unittest.TestCase):
             self.__repoFilme.adauga_film(film1)
         self.assertEqual(len(self.__repoFilme.get_all()), 1)
         self.__repoFilme.modifica_film(film1)
-        self.assertEqual(self.__film.get_titlu(), 'b')
-        self.assertEqual(self.__film.get_descriere(), 'b')
-        self.assertEqual(self.__film.get_gen(), 'b')
+        self.assertEqual(film.get_titlu(), 'b')
+        self.assertEqual(film.get_descriere(), 'b')
+        self.assertEqual(film.get_gen(), 'b')
         with self.assertRaises(RepoError):
             self.__repoFilme.modifica_film(film3)
         x = self.__repoFilme.cauta_film(film2)
-        self.assertEqual(x, self.__film)
+        self.assertEqual(x, film)
         with self.assertRaises(RepoError):
             self.__repoFilme.cauta_film(film3)
         with self.assertRaises(RepoError):
@@ -238,8 +240,8 @@ class TesteUnittest(unittest.TestCase):
 
     def testRepoInchirieri(self):
         self.__repoInchirieri = RepoInchirieri()
-        film1 = self.__film
-        client1 = self.__client
+        film1 = Film(1, 'Titlu', 'Descriere', 'Gen', 0)
+        client1 = Client(1, "Ion", 5001229172347, 0)
         inchiriere = Inchiriere(film1, client1)
         self.__repoInchirieri.inchiriaza(inchiriere)
         self.assertEqual(len(self.__repoInchirieri.get_all()), 1)
