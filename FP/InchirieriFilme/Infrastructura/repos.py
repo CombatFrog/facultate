@@ -47,6 +47,9 @@ class RepoClienti():
                 ok = True
         return ok
 
+    def empty(self):
+        self.__lista_clienti = []
+
 class RepoFilme():
 
     def __init__(self):
@@ -95,6 +98,9 @@ class RepoFilme():
                 ok = True
         return ok
 
+    def empty(self):
+        self.__lista_filme = []
+
 class RepoInchirieri():
 
     def __init__(self):
@@ -121,3 +127,6 @@ class RepoInchirieri():
     def get_all(self):
         #functie care returneaza toate inchirierile din lista de inchirieri
         return self.__lista_inchirieri[:]
+
+    def empty(self):
+        self.__lista_inchirieri = []

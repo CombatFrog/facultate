@@ -6,7 +6,7 @@ class RepoFilmeFromFile(RepoFilme):
     def __init__(self, nume_fisier):
         RepoFilme.__init__(self)
         self.__nume_fisier = nume_fisier
-        self.__incarca_din_fisier()
+        self.incarca_din_fisier()
 
     def __creeaza_film(self, linie):
         #functie care creeaza un film din campurile unei linii din fisier
@@ -14,8 +14,9 @@ class RepoFilmeFromFile(RepoFilme):
         film = Film(int(campuri[0]), campuri[1], campuri[2], campuri[3], 0)
         return film
 
-    def __incarca_din_fisier(self):
+    def incarca_din_fisier(self):
         #functie care incarca filme dintr-un fisier
+        RepoFilme.empty(self)
         f = open(self.__nume_fisier)
         continut = f.read()
         f.close()
@@ -24,14 +25,18 @@ class RepoFilmeFromFile(RepoFilme):
             if linie.strip() == '':
                 continue
             film = self.__creeaza_film(linie)
-            RepoFilme.adauga_film(self, film)
+            if not RepoFilme.id_in_list(self, film.get_id()):
+                RepoFilme.adauga_film(self, film)
+
 
     def __adauga_in_fisier(self, film):
         #functie care adauga un film in fisier
-        with open(self.__nume_fisier, 'a') as f:
-            linie = str(film.get_id()) + ' ' + film.get_titlu() + ' ' + film.get_descriere() + ' ' + film.get_gen()
-            f.write(linie)
-            f.write('\n')
+        with open(self.__nume_fisier, 'w') as f:
+            filme = self.get_all()
+            for film in filme:
+                f.write(str(film.get_id()) + " " + film.get_titlu() + " " + film.get_descriere() + " " + film.get_gen())
+                f.write('\n')
+
 
     def adauga_film(self, film):
         #functie care adauga un film in fisier si in memorie
@@ -71,6 +76,7 @@ class RepoClientiFromFile(RepoClienti):
 
     def __incarca_din_fisier(self):
         #functie care incarca clienti dintr-un fisier in memorie
+        RepoClienti.empty(self)
         f = open(self.__nume_fisier)
         continut = f.read()
         f.close()
@@ -79,7 +85,8 @@ class RepoClientiFromFile(RepoClienti):
             if linie.strip() == '':
                 continue
             client = self.__creeaza_client(linie)
-            RepoClienti.adauga_client(self, client)
+            if not RepoClienti.id_in_list(self, client.get_id()):
+                RepoClienti.adauga_client(self, client)
 
     def __adauga_in_fisier(self, client):
         #functie care adauga un client in fisier
@@ -144,10 +151,11 @@ class RepoInchirieriFromFile(RepoInchirieri):
 
     def __adauga_in_fisier(self, inchiriere):
         #functie care adauga o inchiriere in fiser
-        with open(self.__nume_fisier, 'a') as f:
-            linie = str(inchiriere.get_id_client()) + " " + str(inchiriere.get_id_film())
-            f.write(linie)
-            f.write('\n')
+        with open(self.__nume_fisier, 'w') as f:
+            clienti = self.get_all()
+            for client in clienti:
+                f.write(str(client.get_id()) + " " + client.get_nume() + " " + client.get_cnp())
+                f.write('\n')
 
     def inchiriaza(self, inchiriere):
         #functie care adauga o inchiriere in fisier si in memorie

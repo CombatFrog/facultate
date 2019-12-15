@@ -113,6 +113,7 @@ class ServiceFilme:
         #functie care adauga un film in lista de filme
         #input: id_film, titlul filmului, descrierea filmului, genul filmului
         #output: clientul este adaugat in lista de clienti
+        self.__repoFilme.incarca_din_fisier()
         film = Film(id_film, titlu, descriere, gen, 0)
         self.__validFilme.valideaza_film(film)
         self.__repoFilme.adauga_film(film)
@@ -121,6 +122,7 @@ class ServiceFilme:
         #functie care modifica titlul, descrierea si genul unui film
         #input: id_film -idul fimului care va fi modificat, noul titlu, noua descriere, noul gen
         #output: filmul cu idul id_film primeste titlul titlu_nou, descrierea descreire_noua si genul gen_nou
+        self.__repoFilme.incarca_din_fisier()
         film = Film(id_film, titlu_nou, descriere_noua, gen_nou, 0)
         self.__validFilme.valideaza_film(film)
         self.__repoFilme.modifica_film(film)
@@ -129,6 +131,7 @@ class ServiceFilme:
         #functie care sterge filmul cu idul id_film din lista de filme
         #input: id_film - idul filmului care va fi sters
         #output: filmul cu idul id_film este sters din lista de filme
+        self.__repoFilme.incarca_din_fisier()
         film = Film(id_film, None, None, None, 0)
         self.__validFilme.valideaza_film(film)
         self.__repoFilme.sterge_film(film)
@@ -137,12 +140,14 @@ class ServiceFilme:
         #functie care returneaza filmul cu idul id_film
         #input: id_film - idul filmului cautat
         #output: filmul cu idul id_film
+        self.__repoFilme.incarca_din_fisier()
         film = Film(id_film, None, None, None, 0)
         self.__validFilme.valideaza_film(film)
         return self.__repoFilme.cauta_film(film)
 
     def cele_mai_inchiriate(self):
         #functie care returneaza lista de filme ordoata descrescator dupa numarul de inchirieri
+        self.__repoFilme.incarca_din_fisier()
         lista_filme = self.get_filme()
         ok = False
         while ok is False:
@@ -159,6 +164,7 @@ class ServiceFilme:
     def cele_mai_slabe(self):
         #functie care returneaza lista de filme ordonata crescator dupa numarul filmelor inchiriate
         #daca numarul inchirierilor este egal, filmele sunt ordonate alfabetic dupa titlu
+        self.__repoFilme.incarca_din_fisier()
         lista_filme = self.get_filme()
         ok = False
         while ok is False:
@@ -180,6 +186,7 @@ class ServiceFilme:
 
     def get_filme(self):
         #functie care returneaza lista de filme
+        self.__repoFilme.incarca_din_fisier()
         return self.__repoFilme.get_all()
 
 class ServiceInchirieri:
