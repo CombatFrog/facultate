@@ -1,0 +1,11 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="3">
+            <File firstVisibleLine="25" xOffset="0" scrollWidth="1287" startPos="1295" endPos="1295" selMode="0" lang="Assembly" encoding="-1" filename="C:\Users\Profesor\Desktop\asm_tools\npp\New folder\Multimodul\sumamain.asm" backupFilePath="" originalFileLastModifTimestamp="1575977041" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="1143275520" mapWrapIndentMode="-1" mapIsWrap="no" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1287" startPos="284" endPos="284" selMode="0" lang="Assembly" encoding="-1" filename="C:\Users\Profesor\Desktop\asm_tools\npp\New folder\Multimodul\sumafunctie.asm" backupFilePath="" originalFileLastModifTimestamp="1575975765" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="0" mapWrapIndentMode="-1" mapIsWrap="no" />
+            <File firstVisibleLine="12" xOffset="0" scrollWidth="1287" startPos="971" endPos="971" selMode="0" lang="Assembly" encoding="-1" filename="C:\Users\Profesor\Desktop\asm_tools\npp\New folder\Multimodul_string\stringmain.asm" backupFilePath="C:\Users\Profesor\Desktop\asm_tools\npp\backup\stringmain.asm@2019-12-10_131727" originalFileLastModifTimestamp="1575976607" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="3538992" mapWrapIndentMode="-1" mapIsWrap="no" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1287" startPos="447" endPos="447" selMode="0" lang="Assembly" encoding="-1" filename="C:\Users\Profesor\Desktop\asm_tools\npp\New folder\Multimodul_string\stringfunctie.asm" backupFilePath="C:\Users\Profesor\Desktop\asm_tools\npp\backup\stringfunctie.asm@2019-12-10_132902" originalFileLastModifTimestamp="1575976642" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="0" mapWrapIndentMode="-1" mapIsWrap="no" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

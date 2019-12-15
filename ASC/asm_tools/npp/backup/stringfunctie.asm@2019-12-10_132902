@@ -1,0 +1,22 @@
+bits 32 ; assembling for the 32 bits architecture
+
+; declare the EntryPoint (a label defining the very first instruction of the program)
+global Concatenare
+
+Concatenare:
+    mov edi, [esp+4]
+    mov esi, [esp+20] ; adresa s1
+    mov ecx, [esp+16] ; lungime s1
+    repeta_a:
+        lodsb
+        stosb
+    loop repeta_a
+    
+    mov ecx, [esp+8]; lungime s2
+    mov esi, [esp+12]; adresa s2
+    repeta_b:
+        lodsb
+        stosb
+    loop repeta_b
+
+
