@@ -1,0 +1,17 @@
+from Teste.teste import Teste
+from Presentation.console import Consola
+from Business.services import ServiceHouse
+from Infrastructura.filerepos import RepoHouseFile
+
+repoHouse = RepoHouseFile("case")
+srvHouse = ServiceHouse(repoHouse)
+ui = Consola(srvHouse)
+teste = Teste()
+
+def main():
+    ui.run()
+    teste.run_all()
+
+main()
+
+
