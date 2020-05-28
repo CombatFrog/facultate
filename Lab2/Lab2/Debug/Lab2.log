@@ -1,9 +1,0 @@
-﻿  Dictionar.cpp
-  IteratorDictionar.cpp
-C:\Users\adipo\OneDrive\Desktop\Facultate\SDA\Lab2\Lab2\IteratorDictionar.cpp(23,30): error C3867: 'Nod::urmator': non-standard syntax; use '&' to create a pointer to member
-C:\Users\adipo\OneDrive\Desktop\Facultate\SDA\Lab2\Lab2\IteratorDictionar.cpp(23,30): error C2440: '=': cannot convert from 'PNod (__thiscall Nod::* )(PNod)' to 'PNod'
-C:\Users\adipo\OneDrive\Desktop\Facultate\SDA\Lab2\Lab2\IteratorDictionar.cpp(23,23): message : There is no context in which this conversion is possible
-C:\Users\adipo\OneDrive\Desktop\Facultate\SDA\Lab2\Lab2\IteratorDictionar.cpp(34,48): error C3867: 'Nod::cheie': non-standard syntax; use '&' to create a pointer to member
-  TestExtins.cpp
-  TestScurt.cpp
-  Generating Code...
