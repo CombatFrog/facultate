@@ -1,0 +1,13 @@
+﻿  Reading Qt configuration (C:\Qt\5.14.2\msvc2017_64\bin\qmake.exe)
+  uic Practic.ui
+  rcc Practic.qrc
+  moc Practic.h
+   RCC: Warning: No resources in 'C:\Users\Adrian\Desktop\Pop_AdrianCristian_216_1\Practic\Practic\Practic.qrc'.
+  repo.cpp
+  service.cpp
+  validator.cpp
+  Practic.cpp
+  main.cpp
+  qrc_Practic.cpp
+  moc_Practic.cpp
+  Practic.vcxproj -> C:\Users\Adrian\Desktop\Pop_AdrianCristian_216_1\Practic\x64\Debug\Practic.exe
